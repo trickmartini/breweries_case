@@ -24,13 +24,13 @@ Breweries_Case/
 │   ├──dashboards/           # Grafana dashboards scripts 
 │── logs/                    # Logs generates by Airflow
 │── output/                  # output files from ETL process
-│── scripts/                 # Pyspark scripts for data processing
+│── scripts/                 # PySpark scripts for data processing
 │   ├── bronze_process.py    # ETL script for bronze layer
 │   ├── gold_process.py      # ETL script for gold layer
 │   ├── silver_process.py    # ETL script for silver layer
 │   │── validations/         # Directory for validation scripts
 │── Dockerfile               # Custom Airflow image with PySpark
-│── docker-compose.yaml      # Docker compose configuration
+│── docker-compose.yaml      # Docker Compose configuration
 │── readme.md                # Project documentation
 │── requirements.txt         # Python dependencies
 
@@ -55,13 +55,16 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 docker-compose up -d --build
 ```
 This will: 
-* Build Airflow image + PySpark dependencies.
+* Build Airflow image with PySpark dependencies.
 * Start Airflow and Spark containers.
 * Start and Configure Grafana services.
 
 # Running Pipeline
 ## Triggering the pipeline via Airflow Web Interface
 You can manually trigger the pipeline using the Airflow Web Interface.
+> **Credentials for Airflow UI**:
+>- **Username**: ``airflow``
+>- **Password**: ``airflow``
 ### Steps:
 1. Open Airflow UI and navigate to the `DAGs` section
 2. Locate and open  `breweries_etl_process`
