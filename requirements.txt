@@ -1,0 +1,4 @@
+pyspark~=3.5.4
+requests~=2.32.3
+apache-airflow-providers-apache-spark
+delta-spark==3.3.0
